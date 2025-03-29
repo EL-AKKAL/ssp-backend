@@ -6,6 +6,7 @@ use App\Enums\SocialPlatform;
 use App\Models\User;
 use App\Models\UserSocial;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class UserSocialsSeeder extends Seeder
 {
@@ -20,6 +21,7 @@ class UserSocialsSeeder extends Seeder
                 ->each(fn($platform) => UserSocial::factory()->create([
                     'user_id' => $user->id,
                     'platform' => $platform,
+                    'link' => "https://" . $platform . ".com/" . Str::random(10),
                 ]));
         });
     }
