@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('function');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('role', ['user', 'admin'])->default('user');
+            $table->string('function')->nullable();
             $table->string('phone')->nullable();
             $table->string('location')->nullable();
             $table->enum('gender', ['male', 'female'])->nullable();
@@ -25,7 +26,6 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->text('bio')->nullable();
             $table->string('profile_picture')->nullable();
-            $table->enum('role', ['user', 'admin'])->default('user');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
