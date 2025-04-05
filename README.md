@@ -87,3 +87,7 @@ Development Approach:
 ## User stories
 
 <img src="user-stories.png" alt="user stories">
+
+## User stories MPV Features
+
+<img src="mvp-stories.png" alt="mvp stories">
