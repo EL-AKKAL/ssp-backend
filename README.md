@@ -14,12 +14,12 @@ Project Description: SSP is an online platform that connects service providers a
 #### 2. User Profiles:
 
     * Allow users to create and manage their profiles, including personal information, skills, and fees.
-    * Service providers can showcase their expertise and skill offering.
+    * Users can showcase their expertise and skill offering.
 
 #### 3. post Management:
 
-    * help seekers can manage their posts, view and manage appliants, also can ask help directly from a sp profile.
-    * sp can browse, search, and apply in posts to provide services.
+    * users can manage their posts, view and manage applicants, also can ask help directly from a user profile.
+    * user can browse, search, and apply in posts to provide services.
 
 #### 4. Payment Integration:
 
@@ -124,11 +124,11 @@ Development Approach:
 
     * As a user, I want to search for specific help based on skill or category, so that I can find the right service fast.
 
-    * As a user, I want to create a post asking for help, so that service providers can apply to help me.
+    * As a user, I want to create a post asking for help, so that users can apply to help me.
 
     * As a user, I want to create a post offering help, so that help seekers can reach out to me.
 
-    * As a user, I want to apply to posts as a service provider, so that I can offer my services.
+    * As a user, I want to apply to posts, so that I can offer my services.
 
     * As a user, I want to see applications to my post, so that I can manage and choose the best one.
 
@@ -153,3 +153,235 @@ Development Approach:
     * As an admin, I want to send announcements or notifications, so that all users are updated on platform changes.
 
     * As an admin, I want to check all history logs, so that trust is maintained.
+
+## MVP user stories with acceptance criteria
+
+### Acceptance Criteria: "As a user, I want to register an account."
+
+    * User can register using name, email, and password.
+
+    * Validation errors are shown for invalid/missing data.
+
+    * After registration, user is automatically logged in and redirected to dashboard page.
+
+    * User role defaults to user.
+
+### Acceptance Criteria: "As a user, I want to log into my account."
+
+    * User can log in using email and password.
+
+    * Authentication fails with incorrect credentials.
+
+    * Authenticated users are redirected to the dashboard.
+
+### Acceptance Criteria: "As a user, I want to edit my profile."
+
+    * User can update name, bio, avatar, location, etc.
+
+    * User can see a success message after saving.
+
+    * Only the authenticated user can edit their own profile.
+
+### Acceptance Criteria: "As a user, I want to add my skills and set prices."
+
+    * User can list multiple skills with description and pricing.
+
+    * Each skill must include: title, category, experience level, fee (can be 0).
+
+    * User can update or delete listed skills.
+
+    * Skills appear publicly on user profile.
+
+### Acceptance Criteria: "As a user, I want to see my current requests."
+
+    * User sees a list of requests they’ve made or applied to and even requests that they have received.
+
+    * Each request displays status (Pending, Accepted, Completed).
+
+    * user can see related info to the request , like who made it , date , description...
+
+### Acceptance Criteria: "As a user, I want to follow the status of each request."
+
+    * Request cards display status updates.
+
+    * Status includes: Pending, Accepted, In Progress, Completed, Cancelled.
+
+    * Notification is sent when status changes.
+
+### Acceptance Criteria: "As a user, I want to cancel a request or application."
+
+    * User can cancel request before it's accepted.
+
+    * applicants can cancel an application before acceptance.
+
+    * Cancelled requests are marked and archived (not deleted).
+
+### Acceptance Criteria: "As a user, I want to receive notifications when someone applies to my post."
+
+    * user gets email + in-app notification.
+
+    * Notification includes applicant name and post reference.
+
+    * Notification leads directly to post or applicant’s profile.
+
+### Acceptance Criteria: "As a user, I want to accept an application to my post."
+
+    * user can view all applicants.
+
+    * user can accept only one application per post.
+
+    * Once accepted, request status updates to “In Progress.”
+
+    * Notification is sent to the selected user who has been requested.
+
+### Acceptance Criteria: "As a user, I want to deliver a solution after completing a task."
+
+    * user who provide a service and has accepted a request can mark it as "Delivered."
+
+    * user receives confirmation prompt and can mark as completed or request revision.
+
+    * Once confirmed, task status is updated to “Completed.”
+
+### Acceptance Criteria: "As a user, I want to view other users’ profiles with their skills and prices"
+
+    * users can visit each other profiles , check their services and skills
+    * users can ask help directly from someone's profile if they like what he prvides
+    * requesting help from a profile is treated the same way other requests are treated
+
+### Acceptance Criteria: "As a user, I want to search for specific help based on skill or category."
+
+    * User can search by keyword, category, or skill.
+
+    * Results include profiles matching filters.
+
+    * Filters update results without reloading the page.
+
+### Acceptance Criteria: "As a user, I want to post a request for help."
+
+    * Request includes title, description, category, urgency, and price range.
+
+    * User can optionally set an availability window (date/time)
+
+    * Only logged-in users can post requests.
+
+    * Post is publicly visible to users after creation.
+
+### Acceptance Criteria: "As a user, I want to create a post offering help"
+
+    * Request includes title, description, category, and skills provided with their price.
+
+    * User can optionally set an availability window (date/time)
+
+    * Only logged-in users can post services.
+
+    * Post is publicly visible to other users after creation.
+
+### Acceptance Criteria: "As a user, I want to apply to posts."
+
+    * User can click “Apply” on a post.
+
+    * Application includes optional message or note.
+
+    * User cannot apply to same post twice.
+
+    * Applied posts show under “My Applications.”
+
+### Acceptance Criteria: "As a user, I want to see applications to my post."
+
+    * User sees list of applicants for each post.
+
+    * Each applicant shows profile preview and skill match.
+
+    * Can view full profile before accepting.
+
+### Acceptance Criteria: "As a user, I want to pay for a service once it’s completed."
+
+    * Payment is only available after request is marked as completed.
+
+    * User can see service fee before confirming payment.
+
+    * Payment success/failure messages are shown.
+
+    * Payment triggers completion status and release to service provider.
+
+### Acceptance Criteria: "As a user, I want to leave a review and rating after a service."
+
+    * Review includes rating (1–5 stars) and comment.
+
+    * Can only leave a review after service is marked “Completed.”
+
+    * One review per service interaction.
+
+    * both users as service provider and help seeker review each other for future trust
+
+### Acceptance Criteria: "As a user, I want to see reviews and testimonials on profiles."
+
+    * Reviews appear on all users profiles.
+
+    * Each review shows author name, stars, and comment.
+
+    * Average rating is calculated and displayed.
+
+### Acceptance Criteria: "As an admin, I want to view and manage all users"
+
+    * Admin can view the list of all users.
+
+    * Admin can search/filter users by name, email, role, or status.
+
+    * Admin can activate, deactivate, or delete user accounts.
+
+    * Admin can view individual user profiles and their activities.
+
+    * Admin is notified when suspicious activity is flagged (a complain is made , a bug is reported...).
+
+### Acceptance Criteria: "As an admin, I want to manage all posts and skills"
+
+    * Admin sees a list of all published posts and shared skills.
+
+    * Admin can search/filter by user, category, or flagged status.
+
+    * Admin can delete or hide any post or skill.
+
+    * Admin can view post/skill details and the associated user profile.
+
+    * Posts/skills reported by users are highlighted for review.
+
+### Acceptance Criteria: "As an admin, I want to see platform-wide analytics"
+
+    * Admin dashboard displays key metrics: new users, total posts, applications, completed services, etc.
+
+    * Data is visualized via charts (daily, weekly, monthly).
+
+    * Admin can filter analytics by time range.
+
+    * Admin sees revenue summaries if payment system is enabled.
+
+### Acceptance Criteria: "As an admin, I want to resolve disputes or issues between users"
+
+    * Admin sees a list of reported issues or disputes.
+
+    * Each dispute contains user details, request details, and issue description.
+
+    * Admin can contact both parties.
+
+    * Admin can take action (e.g., refund, ban, suspend user, mark as resolved).
+
+    * Resolutions are logged for audit purposes.
+
+### Acceptance Criteria: "As an admin, I want to send announcements or notifications"
+
+    * Admin can compose a platform-wide announcement.
+
+    * Announcement can be sent as in-app message, email, or both.
+
+    * Announcement history is saved and viewable.
+
+### Acceptance Criteria: "As an admin, I want to check all history logs"
+
+    * Admin can view logs of user activities (login, request updates, payments, reviews, etc).
+
+    * Logs can be filtered by date, user, or action type.
+
+    * Logs are read-only.
+
+    * Each log includes timestamp, action, user ID, and IP address.
